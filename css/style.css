@@ -61,6 +61,10 @@ img {
   padding-top: 80px;
 }
 
+.page-content > section:first-child {
+  padding-top: 0px;
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -1295,6 +1299,7 @@ img {
 
 .about-image {
   position: relative;
+  margin-top: 36px;
   opacity: 0;
   transform: translateX(-30px);
 }
