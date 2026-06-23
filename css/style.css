@@ -172,6 +172,11 @@ img {
   width: 135px;
   height: auto;
   display: block;
+  transition: var(--transition);
+}
+
+.dashboard-logo:hover img {
+  transform: scale(1.04);
 }
 
 .dashboard-actions {
@@ -261,6 +266,7 @@ img {
   color: var(--dark);
   font-size: 1.02rem;
   font-weight: 600;
+  transition: var(--transition);
 }
 
 .dashboard-menu a.active,
@@ -269,10 +275,19 @@ img {
   color: var(--primary);
 }
 
+.dashboard-menu a:hover {
+  padding-left: 30px;
+}
+
 .dashboard-menu i {
   width: 20px;
   text-align: center;
   color: var(--primary);
+  transition: var(--transition);
+}
+
+.dashboard-menu a:hover i {
+  transform: scale(1.12);
 }
 
 .dashboard-main {
@@ -321,11 +336,19 @@ img {
   background: var(--white);
   border-radius: 20px;
   box-shadow: 0 12px 34px rgba(7, 27, 49, 0.08);
+  transition: var(--transition);
 }
 
 .dashboard-stat {
   min-height: 238px;
   padding: 30px;
+}
+
+.dashboard-stat:hover,
+.dashboard-widget:hover,
+.dashboard-profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 46px rgba(7, 27, 49, 0.14);
 }
 
 .stat-icon {
@@ -338,6 +361,11 @@ img {
   border-radius: 14px;
   color: var(--white);
   font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.dashboard-stat:hover .stat-icon {
+  transform: scale(1.08) rotate(6deg);
 }
 
 .stat-icon.blue { background: #049bd0; }
@@ -399,12 +427,14 @@ img {
   justify-content: flex-end;
   align-items: center;
   gap: 14px;
+  cursor: pointer;
 }
 
 .chart-month span {
   order: -1;
   color: #647487;
   font-size: 0.92rem;
+  transition: var(--transition);
 }
 
 .chart-month div {
@@ -414,6 +444,7 @@ img {
   border-radius: 8px;
   background: #f2f4f6;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 .chart-month div::after {
@@ -425,6 +456,21 @@ img {
   height: var(--level);
   border-radius: 7px;
   background: linear-gradient(180deg, #0788bd, #04a6ce);
+  transition: var(--transition);
+}
+
+.chart-month:hover span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.chart-month:hover div {
+  background: #e5f3f8;
+  transform: translateY(-4px);
+}
+
+.chart-month:hover div::after {
+  filter: brightness(1.08);
 }
 
 .maintenance-list {
@@ -440,6 +486,13 @@ img {
   padding: 24px 28px;
   border-radius: 9px;
   background: #f7f8fa;
+  transition: var(--transition);
+}
+
+.maintenance-item:hover {
+  background: var(--white);
+  box-shadow: 0 12px 28px rgba(7, 27, 49, 0.1);
+  transform: translateX(4px);
 }
 
 .maintenance-date strong,
@@ -470,6 +523,7 @@ img {
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 800;
+  transition: var(--transition);
 }
 
 .status-pill.confirmed {
@@ -480,6 +534,11 @@ img {
 .status-pill.pending {
   color: #f49a08;
   background: #fff7e8;
+}
+
+.dashboard-row:hover .status-pill,
+.maintenance-item:hover .status-pill {
+  transform: scale(1.04);
 }
 
 .logout-modal {
@@ -600,10 +659,16 @@ img {
   background: var(--white);
   border-radius: 18px;
   box-shadow: 0 12px 34px rgba(7, 27, 49, 0.08);
+  transition: var(--transition);
 }
 
 .dashboard-row {
   grid-template-columns: 54px 1fr auto;
+}
+
+.dashboard-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(7, 27, 49, 0.14);
 }
 
 .dashboard-row > i,
@@ -617,6 +682,14 @@ img {
   background: rgba(0, 119, 182, 0.1);
   color: var(--primary);
   font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+.dashboard-row:hover > i,
+.dashboard-profile-card:hover .profile-avatar {
+  color: var(--white);
+  background: var(--primary);
+  transform: scale(1.06);
 }
 
 .dashboard-row h3,
