@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
+    if (!navbar) return;
+
     if (currentScroll > 50) {
       navbar.classList.add('scrolled');
     } else {
@@ -147,7 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const errorEl = input.parentElement.querySelector('.error-message') ||
           createErrorElement(input);
 
-        if (!input.value.trim()) {
+        if (input.type === 'checkbox' && !input.checked) {
+          showError(input, errorEl, 'This field is required');
+          valid = false;
+        } else if (!input.value.trim()) {
           showError(input, errorEl, 'This field is required');
           valid = false;
         } else if (input.type === 'email' && !isValidEmail(input.value)) {
@@ -393,6 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function ensureFooter() {
     if (document.body.classList.contains('dashboard-body')) return;
     if (document.body.classList.contains('error-body')) return;
+    if (document.body.classList.contains('auth-split-body')) return;
     if (document.querySelector('.footer')) return;
 
     document.body.insertAdjacentHTML('beforeend', `

@@ -3,119 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Stackly</title>
+  <title>Sign Up - AquaPure</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-
-  <!-- ====== NAVBAR ====== -->
-  <nav class="navbar scrolled" id="navbar">
-    <div class="container">
-      <a href="index.html" class="nav-logo">
+<body class="auth-split-body">
+  <main class="auth-split-page">
+    <section class="auth-showcase" aria-label="AquaPure account benefits">
+      <a href="index.html" class="auth-showcase-logo" aria-label="AquaPure Home">
         <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="signin.html" class="btn btn-primary">Sign In</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-  <div class="nav-overlay"></div>
+      <div class="auth-showcase-content">
+        <h1>Start Clean Water Care</h1>
+        <p>Create your AquaPure account to book water treatment services, save purification systems, and keep every enquiry in one place.</p>
+        <ul>
+          <li><i class="fas fa-circle-check"></i> Build a secure customer profile</li>
+          <li><i class="fas fa-circle-check"></i> Book service visits faster</li>
+          <li><i class="fas fa-circle-check"></i> Get maintenance reminders on time</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- ====== SIGN UP ====== -->
-  <section class="auth-page">
-    <div class="auth-container">
-      <div class="auth-header">
-        <a href="index.html" class="logo">
-          <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
-        </a>
-        <h2>Create Account</h2>
-        <p>Join us and start your journey to clean water</p>
+    <section class="auth-panel" aria-label="Sign up form">
+      <div class="auth-panel-inner">
+        <div class="auth-panel-top">
+          <a href="index.html" class="auth-panel-logo" aria-label="AquaPure Home">
+            <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+          </a>
+          <a href="index.html" class="auth-back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+
+        <div class="auth-header">
+          <h2>Create Account</h2>
+          <p>Join AquaPure and manage your water services</p>
+        </div>
+
+        <form class="auth-form" id="signupForm">
+          <div class="form-group">
+            <label>Select Role</label>
+            <div class="role-options">
+              <label class="role-card">
+                <input type="radio" name="signupRole" value="customer" checked>
+                <span><i class="fas fa-user-check"></i> Customer</span>
+              </label>
+              <label class="role-card">
+                <input type="radio" name="signupRole" value="admin">
+                <span><i class="fas fa-screwdriver-wrench"></i> Admin</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <div class="auth-input-wrap">
+              <input type="text" id="signupName" placeholder="John Doe" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <div class="auth-input-wrap">
+              <input type="email" id="signupEmail" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="auth-input-wrap">
+              <input type="password" id="signupPassword" placeholder="At least 6 characters" required>
+              <button type="button" class="password-toggle fas fa-eye" aria-label="Toggle password visibility"></button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="auth-input-wrap">
+              <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+              <button type="button" class="password-toggle fas fa-eye" aria-label="Toggle password visibility"></button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label>
+              <input type="checkbox" required> I agree to the <a href="404.html">Terms & Conditions</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Create Account <i class="fas fa-user-plus"></i>
+          </button>
+        </form>
+
+        <div class="auth-divider">
+          <span>or sign up with</span>
+        </div>
+
+        <div class="auth-social">
+          <button type="button"><img src="images/google-icon.svg" alt="" class="google-icon"> Google</button>
+          <button type="button"><i class="fab fa-facebook facebook-icon"></i> Facebook</button>
+        </div>
+
+        <p class="auth-footer-text">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </p>
       </div>
-      <div class="auth-benefits">
-        <div>
-          <i class="fas fa-user-shield"></i>
-          <span>Secure customer profile</span>
-        </div>
-        <div>
-          <i class="fas fa-calendar-alt"></i>
-          <span>Book service visits faster</span>
-        </div>
-      </div>
-      <form class="auth-form" id="signupForm">
-        <div class="form-group">
-          <label for="signupName">Full Name</label>
-          <div class="auth-input-wrap">
-            <span class="input-icon"><i class="fas fa-user"></i></span>
-            <input type="text" id="signupName" placeholder="John Doe" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="signupEmail">Email Address</label>
-          <div class="auth-input-wrap">
-            <span class="input-icon"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="signupEmail" placeholder="john@example.com" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="signupRole">Select Role</label>
-          <div class="auth-input-wrap">
-            <span class="input-icon"><i class="fas fa-user-shield"></i></span>
-            <select id="signupRole" required>
-              <option value="">Choose role</option>
-              <option value="customer">Customer</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="signupPassword">Password</label>
-          <div class="auth-input-wrap">
-            <span class="input-icon"><i class="fas fa-lock"></i></span>
-            <input type="password" id="signupPassword" placeholder="At least 6 characters" required>
-            <button type="button" class="password-toggle fas fa-eye" aria-label="Toggle password visibility"></button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <div class="auth-input-wrap">
-            <span class="input-icon"><i class="fas fa-lock"></i></span>
-            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
-            <button type="button" class="password-toggle fas fa-eye" aria-label="Toggle password visibility"></button>
-          </div>
-        </div>
-        <div class="form-options">
-          <label>
-            <input type="checkbox" required> I agree to the <a href="#">Terms & Conditions</a>
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">
-          Create Account <i class="fas fa-user-plus"></i>
-        </button>
-      </form>
-      <div class="auth-divider">
-        <span>Or sign up with</span>
-      </div>
-      <div class="auth-social">
-        <button type="button"><img src="images/google-icon.svg" alt="" class="google-icon"> Google</button>
-        <button type="button"><i class="fab fa-facebook facebook-icon"></i> Facebook</button>
-      </div>
-      <p class="auth-footer-text">
-        Already have an account? <a href="signin.html">Sign In</a>
-      </p>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
