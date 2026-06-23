@@ -52,6 +52,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ====== Page Transition ======
+  document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+
+      if (
+        isModifiedClick ||
+        link.hasAttribute('download') ||
+        link.target === '_blank' ||
+        link.closest('.dashboard-menu')?.querySelector('a[href="signin.html"]') === link ||
+        !href ||
+        href.startsWith('#') ||
+        href.startsWith('tel:') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('javascript:')
+      ) {
+        return;
+      }
+
+      const destination = new URL(href, window.location.href);
+
+      if (destination.origin !== window.location.origin || destination.href === window.location.href) return;
+
+      event.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(() => {
+        window.location.href = destination.href;
+      }, 220);
+    });
+  });
+
   // ====== Scroll Animations (Intersection Observer) ======
   const animateElements = document.querySelectorAll(
     '.service-card, .process-step, .testimonial-card, .gallery-item, ' +
