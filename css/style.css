@@ -2054,7 +2054,7 @@ img {
   display: grid;
   place-items: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #eefaff 0%, #ffffff 50%, #eef8f6 100%);
+  background: linear-gradient(135deg, #fff1f1 0%, #ffffff 50%, #ffe8e8 100%);
 }
 
 .error-card {
@@ -2062,8 +2062,9 @@ img {
   padding: 48px;
   border-radius: 20px;
   background: var(--white);
-  box-shadow: 0 20px 60px rgba(7, 27, 49, 0.14);
+  box-shadow: 0 20px 60px rgba(220, 38, 38, 0.16);
   text-align: center;
+  border: 1px solid rgba(220, 38, 38, 0.12);
 }
 
 .error-logo {
@@ -2080,14 +2081,14 @@ img {
 
 .error-card span {
   display: block;
-  color: var(--primary);
+  color: #dc2626;
   font-weight: 800;
   margin-bottom: 8px;
   text-transform: uppercase;
 }
 
 .error-card h1 {
-  color: var(--dark);
+  color: #991b1b;
   font-size: 2.4rem;
   line-height: 1.15;
   margin-bottom: 16px;
@@ -2104,6 +2105,25 @@ img {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+}
+
+.error-body .btn-primary {
+  background: linear-gradient(135deg, #dc2626, #f97316);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.28);
+}
+
+.error-body .btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.36);
+}
+
+.error-body .btn-outline {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.error-body .btn-outline:hover {
+  color: var(--white);
+  background: #dc2626;
 }
 
 .password-toggle {
