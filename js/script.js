@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             const email = form.querySelector('#signinEmail')?.value.trim();
             saveDashboardUser(getNameFromEmail(email), email);
-            showToast('Welcome back! Redirecting...', 'success');
+            showToast('Sign in successful! Redirecting to dashboard...', 'success');
             setTimeout(() => window.location.href = 'dashboard.html', 1500);
           }
         }, 1500);

@@ -186,9 +186,17 @@ img {
   height: 82px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 32px 0 10.5%;
+  justify-content: flex-end;
+  padding: 0 32px 0 16px;
   background: #d9edf5;
+}
+
+.dashboard-logo {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  display: inline-flex;
+  transform: translateY(-50%);
 }
 
 .dashboard-logo img {
@@ -1985,7 +1993,8 @@ img {
   gap: 12px;
 }
 
-.auth-social button {
+.auth-social button,
+.auth-social a {
   flex: 1;
   padding: 12px;
   border: 2px solid #e0e0e0;
@@ -2000,7 +2009,8 @@ img {
   gap: 8px;
 }
 
-.auth-social button:hover {
+.auth-social button:hover,
+.auth-social a:hover {
   border-color: var(--primary);
   background: rgba(0, 119, 182, 0.05);
 }
@@ -2216,6 +2226,10 @@ img {
   .dashboard-topbar {
     height: 76px;
     padding: 0 18px;
+  }
+
+  .dashboard-logo {
+    left: 18px;
   }
 
   .dashboard-logo img {
@@ -2702,8 +2716,13 @@ img {
   gap: 14px;
 }
 
-.auth-split-body .auth-social button {
+.auth-split-body .auth-social button,
+.auth-split-body .auth-social a {
   min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   border-color: rgba(255, 255, 255, 0.14);
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.82);
@@ -2711,7 +2730,8 @@ img {
   font-weight: 800;
 }
 
-.auth-split-body .auth-social button:hover {
+.auth-split-body .auth-social button:hover,
+.auth-split-body .auth-social a:hover {
   border-color: #1cb4ee;
   background: rgba(28, 180, 238, 0.12);
 }
@@ -2906,7 +2926,8 @@ img {
     height: 52px;
   }
 
-  .auth-social button {
+  .auth-social button,
+  .auth-social a {
     width: 100%;
     justify-content: center;
   }
