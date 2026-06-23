@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - AquaPure</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="signin.html" class="btn btn-primary">Sign In</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-overlay"></div>
+
+  <main class="page-content">
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header fade-up">
+          <h2>Get In Touch</h2>
+          <p>Have questions? We'd love to hear from you</p>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marker-alt" style="font-size: 1.3rem;"></i>
+              </div>
+              <div>
+                <h4>Visit Us</h4>
+                <p>123 Water Street, Purification City, PC 10001</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone-alt" style="font-size: 1.3rem;"></i>
+              </div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope" style="font-size: 1.3rem;"></i>
+              </div>
+              <div>
+                <h4>Email Us</h4>
+                <p>info@aquapure.com</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-clock" style="font-size: 1.3rem;"></i>
+              </div>
+              <div>
+                <h4>Working Hours</h4>
+                <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+            <div class="contact-map">
+              <iframe
+                title="AquaPure location map"
+                src="https://www.google.com/maps?q=123%20Water%20Street%2C%20Purification%20City%2C%20PC%2010001&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="contact-enquiry">
+              <img src="images/service-1.webp" alt="Water treatment enquiry" loading="lazy">
+              <div class="contact-enquiry-content">
+                <span>Quick Enquiry</span>
+                <h3>Need a water treatment solution?</h3>
+                <p>Share your requirement and our team will help you choose the right filtration, RO, UV, or maintenance service.</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject">
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="service">Service Request</option>
+                <option value="support">Support</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us about your requirements..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section content-section-white">
+      <div class="container">
+        <div class="section-header fade-up">
+          <h2>Enquiry Support</h2>
+          <p>Send the details you have, and our team will guide the next step</p>
+        </div>
+        <div class="content-grid">
+          <div class="content-card fade-up">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>Site Assessment</h3>
+            <p>Tell us your location, water source, and daily usage so we can plan the right inspection.</p>
+          </div>
+          <div class="content-card fade-up">
+            <i class="fas fa-file-signature"></i>
+            <h3>Quick Proposal</h3>
+            <p>We prepare a clear service recommendation with equipment, scope, and maintenance needs.</p>
+          </div>
+          <div class="content-card fade-up">
+            <i class="fas fa-calendar-check"></i>
+            <h3>Visit Scheduling</h3>
+            <p>Choose a convenient slot for water testing, installation review, or service support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

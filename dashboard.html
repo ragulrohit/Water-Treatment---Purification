@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+  <header class="dashboard-topbar">
+    <a href="index.html" class="dashboard-logo">
+      <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+    </a>
+    <div class="dashboard-actions">
+      <button type="button" class="dashboard-action" aria-label="Notifications">
+        <i class="fas fa-bell"></i>
+        <span></span>
+      </button>
+      <a href="dashboard-profile.html" class="dashboard-profile-icon" aria-label="Profile">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-user">
+      <strong data-dashboard-name>Customer</strong>
+      <span data-dashboard-email>customer@gmail.com</span>
+    </div>
+    <nav class="dashboard-menu" aria-label="Dashboard navigation">
+      <a href="dashboard.html" class="active"><i class="fas fa-table-cells-large"></i> Overview</a>
+      <a href="dashboard-services.html"><i class="fas fa-calendar-check"></i> My Services</a>
+      <a href="dashboard-enquiries.html"><i class="fas fa-clipboard-list"></i> Enquiries</a>
+      <a href="dashboard-profile.html"><i class="fas fa-user"></i> My Profile</a>
+      <a href="dashboard-saved.html"><i class="fas fa-heart"></i> Saved Systems</a>
+      <a href="signin.html"><i class="fas fa-right-from-bracket"></i> Sign Out</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <section class="dashboard-welcome">
+      <div>
+        <span>Welcome back,</span>
+        <h1 data-dashboard-name>Customer</h1>
+      </div>
+      <!-- <p>Here is your water treatment and purification overview for today.</p> -->
+    </section>
+
+    <section class="dashboard-stats" aria-label="Water treatment summary">
+      <article class="dashboard-stat">
+        <div class="stat-icon blue"><i class="fas fa-filter"></i></div>
+        <strong>2</strong>
+        <span>Active Systems</span>
+      </article>
+      <article class="dashboard-stat">
+        <div class="stat-icon green"><i class="fas fa-circle-check"></i></div>
+        <strong>8</strong>
+        <span>Completed Services</span>
+      </article>
+      <article class="dashboard-stat">
+        <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+        <strong>12</strong>
+        <span>Hours Filtered</span>
+      </article>
+      <article class="dashboard-stat">
+        <div class="stat-icon purple"><i class="fas fa-droplet"></i></div>
+        <strong>5</strong>
+        <span>Saved Solutions</span>
+      </article>
+    </section>
+
+    <section class="dashboard-content-grid">
+      <article class="dashboard-widget">
+        <h2><i class="fas fa-chart-simple"></i> Monthly Services</h2>
+        <div class="service-chart" aria-label="Monthly services chart">
+          <div class="chart-month" style="--level: 58%"><span>Jan</span><div></div></div>
+          <div class="chart-month" style="--level: 44%"><span>Feb</span><div></div></div>
+          <div class="chart-month" style="--level: 68%"><span>Mar</span><div></div></div>
+          <div class="chart-month" style="--level: 52%"><span>Apr</span><div></div></div>
+          <div class="chart-month" style="--level: 78%"><span>May</span><div></div></div>
+          <div class="chart-month" style="--level: 88%"><span>Jun</span><div></div></div>
+        </div>
+      </article>
+
+      <article class="dashboard-widget">
+        <h2><i class="fas fa-clock"></i> Upcoming Maintenance</h2>
+        <div class="maintenance-list">
+          <div class="maintenance-item">
+            <div class="maintenance-date"><strong>28</strong><span>Jun</span></div>
+            <div>
+              <h3>RO Membrane Check</h3>
+              <p>2 hrs - Home system</p>
+            </div>
+            <span class="status-pill confirmed">Confirmed</span>
+          </div>
+          <div class="maintenance-item">
+            <div class="maintenance-date"><strong>5</strong><span>Jul</span></div>
+            <div>
+              <h3>UV Lamp Replacement</h3>
+              <p>1 hr - Commercial unit</p>
+            </div>
+            <span class="status-pill pending">Pending</span>
+          </div>
+          <div class="maintenance-item">
+            <div class="maintenance-date"><strong>12</strong><span>Jul</span></div>
+            <div>
+              <h3>Water Quality Test</h3>
+              <p>3 hrs - Industrial plant</p>
+            </div>
+            <span class="status-pill confirmed">Confirmed</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="error-body">
+  <main class="error-page">
+    <div class="error-card">
+      <a href="index.html" class="error-logo">
+        <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+      </a>
+      <span>404 Error</span>
+      <h1>Page Lost in the Flow</h1>
+      <p>The page you are looking for may have moved, been removed, or the link may be incorrect. Let us guide you back to clean water solutions.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary"><i class="fas fa-home"></i> Back Home</a>
+        <button type="button" class="btn btn-outline" onclick="history.length > 1 ? history.back() : window.location.href='index.html'"><i class="fas fa-arrow-left"></i> Go Back</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

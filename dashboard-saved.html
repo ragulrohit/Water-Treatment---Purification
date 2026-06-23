@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Systems - Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+  <header class="dashboard-topbar">
+    <a href="index.html" class="dashboard-logo">
+      <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+    </a>
+    <div class="dashboard-actions">
+      <button type="button" class="dashboard-action" aria-label="Notifications">
+        <i class="fas fa-bell"></i>
+        <span></span>
+      </button>
+      <a href="dashboard-profile.html" class="dashboard-profile-icon" aria-label="Profile">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
+  </header>
+
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-user">
+      <strong data-dashboard-name>Customer</strong>
+      <span data-dashboard-email>customer@gmail.com</span>
+    </div>
+    <nav class="dashboard-menu" aria-label="Dashboard navigation">
+      <a href="dashboard.html"><i class="fas fa-table-cells-large"></i> Overview</a>
+      <a href="dashboard-services.html"><i class="fas fa-calendar-check"></i> My Services</a>
+      <a href="dashboard-enquiries.html"><i class="fas fa-clipboard-list"></i> Enquiries</a>
+      <a href="dashboard-profile.html"><i class="fas fa-user"></i> My Profile</a>
+      <a href="dashboard-saved.html" class="active"><i class="fas fa-heart"></i> Saved Systems</a>
+      <a href="signin.html"><i class="fas fa-right-from-bracket"></i> Sign Out</a>
+    </nav>
+  </aside>
+
+  <main class="dashboard-main">
+    <section class="dashboard-page-head">
+      <span>Dashboard</span>
+      <h1>Saved Systems</h1>
+      <p>Keep useful water treatment options ready for future enquiries.</p>
+    </section>
+
+    <section class="dashboard-list">
+      <article class="dashboard-row">
+        <i class="fas fa-filter"></i>
+        <div>
+          <h3>Whole Home Filtration</h3>
+          <p>Multi-stage treatment for sediment, odor, and taste improvement.</p>
+        </div>
+        <span class="status-pill confirmed">Saved</span>
+      </article>
+      <article class="dashboard-row">
+        <i class="fas fa-droplet"></i>
+        <div>
+          <h3>Commercial RO Plant</h3>
+          <p>High-output purification for offices, hotels, and production use.</p>
+        </div>
+        <span class="status-pill confirmed">Saved</span>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

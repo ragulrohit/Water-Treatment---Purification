@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  ensureFooter();
 
   // ====== Navbar Toggle (Hamburger) ======
   const hamburger = document.querySelector('.hamburger');
@@ -55,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateElements = document.querySelectorAll(
     '.service-card, .process-step, .testimonial-card, .gallery-item, ' +
     '.team-card, .blog-card, .fade-up, ' +
-    '.about-image, .about-content, .contact-wrapper, .equipment-card'
+    '.about-image, .about-content, .contact-wrapper, .equipment-card, ' +
+    '.quality-card, .industry-item'
   );
 
   const observerOptions = {
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let valid = true;
-      const inputs = form.querySelectorAll('input[required]');
+      const inputs = form.querySelectorAll('input[required], select[required]');
 
       inputs.forEach(input => {
         const errorEl = input.parentElement.querySelector('.error-message') ||
@@ -147,11 +149,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const isSignup = form.closest('#signupForm');
           if (isSignup) {
+            const name = form.querySelector('#signupName')?.value.trim();
+            const email = form.querySelector('#signupEmail')?.value.trim();
+            saveDashboardUser(name, email);
             showToast('Account created successfully! Redirecting...', 'success');
             setTimeout(() => window.location.href = 'signin.html', 1500);
           } else {
+            const email = form.querySelector('#signinEmail')?.value.trim();
+            saveDashboardUser(getNameFromEmail(email), email);
             showToast('Welcome back! Redirecting...', 'success');
-            setTimeout(() => window.location.href = 'index.html', 1500);
+            setTimeout(() => window.location.href = 'dashboard.html', 1500);
           }
         }, 1500);
       }
@@ -179,6 +186,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function saveDashboardUser(name, email) {
+    if (name) localStorage.setItem('dashboardUserName', name);
+    if (email) localStorage.setItem('dashboardUserEmail', email);
+  }
+
+  function getNameFromEmail(email) {
+    if (!email) return 'Customer';
+    return email.split('@')[0]
+      .replace(/[._-]+/g, ' ')
+      .replace(/\b\w/g, char => char.toUpperCase());
+  }
+
+  const dashboardName = localStorage.getItem('dashboardUserName') || 'Customer';
+  const dashboardEmail = localStorage.getItem('dashboardUserEmail') || 'customer@gmail.com';
+
+  document.querySelectorAll('[data-dashboard-name]').forEach(el => {
+    el.textContent = dashboardName;
+  });
+
+  document.querySelectorAll('[data-dashboard-email]').forEach(el => {
+    el.textContent = dashboardEmail;
+  });
+
+  const dashboardSignOutLinks = document.querySelectorAll('.dashboard-menu a[href="signin.html"]');
+  dashboardSignOutLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLogoutConfirm(link.href);
+    });
+  });
+
+  function showLogoutConfirm(redirectUrl) {
+    let modal = document.querySelector('.logout-modal');
+
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.className = 'logout-modal';
+      modal.innerHTML = `
+        <div class="logout-dialog" role="dialog" aria-modal="true" aria-labelledby="logoutTitle">
+          <i class="fas fa-right-from-bracket"></i>
+          <h2 id="logoutTitle">Confirm Logout</h2>
+          <p>Are you sure you want to sign out of your dashboard?</p>
+          <div class="logout-actions">
+            <button type="button" class="logout-cancel">Cancel</button>
+            <button type="button" class="logout-confirm">Confirm</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      modal.querySelector('.logout-cancel').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) modal.classList.remove('active');
+      });
+    }
+
+    modal.querySelector('.logout-confirm').onclick = () => {
+      localStorage.removeItem('dashboardUserName');
+      localStorage.removeItem('dashboardUserEmail');
+      window.location.href = redirectUrl;
+    };
+
+    modal.classList.add('active');
   }
 
   // ====== Toast Notification ======
@@ -282,4 +357,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   `;
   document.head.appendChild(styleSheet);
+
+  function ensureFooter() {
+    if (document.body.classList.contains('dashboard-body')) return;
+    if (document.body.classList.contains('error-body')) return;
+    if (document.querySelector('.footer')) return;
+
+    document.body.insertAdjacentHTML('beforeend', `
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-about">
+              <a href="index.html" class="footer-logo" aria-label="Stackly Home">
+                <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
+              </a>
+              <h3>AquaPure</h3>
+              <p>Your trusted partner in water treatment and purification. We deliver clean, safe, and great-tasting water through innovative and eco-friendly solutions.</p>
+              <div class="footer-social">
+                <a href="404.html" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="404.html" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="404.html" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="404.html" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+            <div>
+              <h4>Quick Links</h4>
+              <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="team.html">Our Team</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h4>Services</h4>
+              <div class="footer-links">
+                <a href="services.html">Water Filtration</a>
+                <a href="services.html">Wastewater Treatment</a>
+                <a href="services.html">Chemical Treatment</a>
+                <a href="services.html">System Maintenance</a>
+                <a href="contact.html">Consultation</a>
+              </div>
+            </div>
+            <div>
+              <h4>Support</h4>
+              <div class="footer-links">
+                <a href="index.html#faq">FAQ</a>
+                <a href="contact.html">Support Center</a>
+                <a href="contact.html">Careers</a>
+                <a href="signin.html">Client Login</a>
+                <a href="signup.html">Create Account</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 AquaPure. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> for clean water</p>
+          </div>
+        </div>
+      </footer>
+    `);
+  }
 });
