@@ -12,6 +12,10 @@
     <a href="index.html" class="dashboard-logo">
       <img src="images/Stackly_logo.png" alt="Stackly Logo" loading="lazy">
     </a>
+    <div class="dashboard-header-welcome">
+      <span>Welcome back</span>
+      <strong data-dashboard-name>Customer</strong>
+    </div>
     <div class="dashboard-actions">
       <button type="button" class="dashboard-action" aria-label="Notifications">
         <i class="fas fa-bell"></i>
@@ -41,10 +45,15 @@
   <main class="dashboard-main">
     <section class="dashboard-welcome">
       <div>
-        <span>Welcome back,</span>
+        <span class="dashboard-eyebrow"><i class="fas fa-sparkles"></i> Water care command center</span>
+        <span>Hai,</span>
         <h1 data-dashboard-name>Customer</h1>
+        <p>Monitor water quality, system health, and upcoming services from one place.</p>
       </div>
-      <!-- <p>Here is your water treatment and purification overview for today.</p> -->
+      <a href="dashboard-services.html" class="dashboard-primary-action">
+        <i class="fas fa-calendar-plus"></i>
+        Book a Service
+      </a>
     </section>
 
     <section class="dashboard-stats" aria-label="Water treatment summary">
@@ -109,6 +118,135 @@
               <p>3 hrs - Industrial plant</p>
             </div>
             <span class="status-pill confirmed">Confirmed</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="dashboard-insights-grid" aria-label="System insights">
+      <article class="dashboard-widget water-quality-widget">
+        <div class="widget-heading">
+          <div>
+            <span>Live overview</span>
+            <h2><i class="fas fa-droplet"></i> Water Quality</h2>
+          </div>
+          <span class="status-pill confirmed">Excellent</span>
+        </div>
+
+        <div class="quality-metrics">
+          <div class="quality-metric">
+            <div class="metric-top">
+              <span>TDS Level</span>
+              <strong>72 ppm</strong>
+            </div>
+            <div class="metric-bar"><span style="--metric: 72%"></span></div>
+            <small>Recommended: below 150 ppm</small>
+          </div>
+          <div class="quality-metric">
+            <div class="metric-top">
+              <span>pH Balance</span>
+              <strong>7.2</strong>
+            </div>
+            <div class="metric-bar green"><span style="--metric: 82%"></span></div>
+            <small>Healthy range: 6.5 – 8.5</small>
+          </div>
+          <div class="quality-metric">
+            <div class="metric-top">
+              <span>Filter Life</span>
+              <strong>68%</strong>
+            </div>
+            <div class="metric-bar orange"><span style="--metric: 68%"></span></div>
+            <small>Estimated 46 days remaining</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="dashboard-widget">
+        <div class="widget-heading">
+          <div>
+            <span>Current devices</span>
+            <h2><i class="fas fa-heart-pulse"></i> System Health</h2>
+          </div>
+          <a href="dashboard-services.html" class="widget-link">View all</a>
+        </div>
+
+        <div class="system-health-list">
+          <div class="system-health-item">
+            <div class="health-icon online"><i class="fas fa-house"></i></div>
+            <div>
+              <h3>Home RO System</h3>
+              <p>Kitchen unit · Last checked today</p>
+            </div>
+            <span class="health-state"><i class="fas fa-circle"></i> Online</span>
+          </div>
+          <div class="system-health-item">
+            <div class="health-icon service"><i class="fas fa-building"></i></div>
+            <div>
+              <h3>Commercial UV Unit</h3>
+              <p>Main office · Service due soon</p>
+            </div>
+            <span class="health-state warning"><i class="fas fa-circle"></i> Attention</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="dashboard-widget">
+        <div class="widget-heading">
+          <div>
+            <span>Shortcuts</span>
+            <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a href="dashboard-services.html">
+            <i class="fas fa-calendar-plus"></i>
+            <span>Book a Service</span>
+          </a>
+          <a href="dashboard-enquiries.html">
+            <i class="fas fa-message"></i>
+            <span>New Enquiry</span>
+          </a>
+          <a href="services.html">
+            <i class="fas fa-magnifying-glass"></i>
+            <span>Explore Systems</span>
+          </a>
+          <a href="contact.html">
+            <i class="fas fa-headset"></i>
+            <span>Get Support</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="dashboard-widget">
+        <div class="widget-heading">
+          <div>
+            <span>Latest updates</span>
+            <h2><i class="fas fa-list-check"></i> Recent Activity</h2>
+          </div>
+        </div>
+
+        <div class="activity-list">
+          <div class="activity-item">
+            <i class="fas fa-circle-check"></i>
+            <div>
+              <h3>Water quality test completed</h3>
+              <p>Home RO System · Today, 10:30 AM</p>
+            </div>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-file-invoice"></i>
+            <div>
+              <h3>Service report is ready</h3>
+              <p>Membrane cleaning · Yesterday</p>
+            </div>
+          </div>
+          <div class="activity-item">
+            <i class="fas fa-heart"></i>
+            <div>
+              <h3>New system saved</h3>
+              <p>Industrial UF Plant · 3 days ago</p>
+            </div>
           </div>
         </div>
       </article>
