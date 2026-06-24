@@ -325,7 +325,9 @@ img {
 
 .dashboard-user span {
   color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .dashboard-menu {
@@ -2660,7 +2662,8 @@ img {
   }
 
   .dashboard-user span {
-    overflow-wrap: anywhere;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .dashboard-menu {
@@ -5098,6 +5101,27 @@ button {
 }
 
 @media (max-width: 768px) {
+  html {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body.dashboard-body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.dashboard-body .dashboard-main {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
   .container {
     padding-left: 18px;
     padding-right: 18px;
